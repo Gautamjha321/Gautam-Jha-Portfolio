@@ -1,0 +1,446 @@
+/* Enhanced Styles for About and Skills Sections */
+
+/* ===== ABOUT SECTION ENHANCEMENTS ===== */
+.about {
+  position: relative;
+  overflow: hidden;
+  padding: 6rem 0;
+  
+}
+
+.about::before {
+  content: '';
+  position: absolute;
+  top: -100px;
+  right: -100px;
+  width: 300px;
+  height: 300px;
+  background: radial-gradient(circle, rgba(99, 102, 241, 0.2), transparent 70%);
+  z-index: 0;
+  border-radius: 50%;
+}
+
+.about::after {
+  content: '';
+  position: absolute;
+  bottom: -100px;
+  left: -100px;
+  width: 300px;
+  height: 300px;
+  background: radial-gradient(circle, rgba(16, 185, 129, 0.2), transparent 70%);
+  z-index: 0;
+  border-radius: 50%;
+}
+
+.about h2 {
+  position: relative;
+  z-index: 1;
+  margin-bottom: 3rem;
+}
+
+.about-content {
+  display: flex;
+  align-items: center;
+  gap: 4rem;
+  position: relative;
+  z-index: 1;
+}
+
+/* Modern About Image */
+.about-img {
+  flex: 1;
+  position: relative;
+  max-width: 400px;
+  z-index: 2;
+}
+
+.about-img-container {
+  position: relative;
+  overflow: hidden;
+  border-radius: 20px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+  transform: perspective(1000px) rotateY(5deg) rotateX(5deg);
+  transition: all 0.5s ease;
+}
+
+.about-img-container:hover {
+  transform: perspective(1000px) rotateY(0deg) rotateX(0deg);
+}
+
+.about-img img {
+  display: block;
+  width: 100%;
+  height: auto;
+  transition: transform 0.6s ease, filter 0.6s ease;
+  filter: contrast(1.05) saturate(1.1);
+}
+
+.about-img-container:hover img {
+  transform: scale(1.05);
+  filter: contrast(1.1) saturate(1.2);
+}
+
+/* Image Decorations */
+.about-img::before {
+  content: '';
+  position: absolute;
+  top: -30px;
+  left: -30px;
+  width: 100px;
+  height: 100px;
+  border: 5px solid var(--primary);
+  border-radius: 20px;
+  z-index: -1;
+  opacity: 0.5;
+}
+
+.about-img::after {
+  content: '';
+  position: absolute;
+  bottom: -30px;
+  right: -30px;
+  width: 100px;
+  height: 100px;
+  border: 5px solid var(--secondary);
+  border-radius: 20px;
+  z-index: -1;
+  opacity: 0.5;
+}
+
+/* Image overlay with gradient */
+.about-img-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to bottom right, rgba(99, 102, 241, 0.2), rgba(16, 185, 129, 0.2));
+  opacity: 0;
+  transition: opacity 0.4s ease;
+  border-radius: 20px;
+}
+
+.about-img-container:hover .about-img-overlay {
+  opacity: 1;
+}
+
+/* Pattern dots */
+.about-pattern {
+  position: absolute;
+  width: 150px;
+  height: 150px;
+  background-image: radial-gradient(var(--gray) 1px, transparent 1px);
+  background-size: 10px 10px;
+  opacity: 0.1;
+  z-index: -1;
+}
+
+.about-pattern-1 {
+  top: -20px;
+  right: -50px;
+}
+
+.about-pattern-2 {
+  bottom: -20px;
+  left: -50px;
+}
+
+/* About Text */
+.about-text {
+  flex: 1.2;
+  max-width: 600px;
+}
+
+.about-text p {
+  margin-bottom: 1.5rem;
+  font-size: 1.1rem;
+  line-height: 1.8;
+  color: var(--light);
+  opacity: 0.9;
+}
+
+.about-text strong {
+  color: var(--primary);
+  font-weight: 600;
+}
+
+.about-text .btn {
+  margin-top: 1rem;
+  transform: translateY(0);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.about-text .btn:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(99, 102, 241, 0.3);
+}
+
+/* ===== SKILLS SECTION ENHANCEMENTS ===== */
+.skills {
+  position: relative;
+  overflow: hidden;
+}
+
+/* Background effect */
+.skills::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(circle at 80% 80%, rgba(99, 102, 241, 0.08), transparent 40%),
+              radial-gradient(circle at 20% 30%, rgba(16, 185, 129, 0.08), transparent 40%);
+  z-index: 0;
+}
+
+/* Enhanced skills grid */
+.skills-grid {
+  position: relative;
+  z-index: 1;
+}
+
+/* Enhanced skill card */
+.skill {
+  position: relative;
+  overflow: hidden;
+  background: rgba(30, 41, 59, 0.6);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: var(--radius-lg);
+  padding: var(--spacing-md);
+  text-align: center;
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  backdrop-filter: blur(10px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  z-index: 1;
+}
+
+/* Glowing background effect */
+.skill::before {
+  content: '';
+  position: absolute;
+  width: 150%;
+  height: 150%;
+  background: conic-gradient(
+    from 0deg at 50% 50%,
+    var(--primary),
+    var(--accent-alt),
+    var(--secondary),
+    var(--accent),
+    var(--primary)
+  );
+  top: -25%;
+  left: -25%;
+  z-index: -2;
+  opacity: 0;
+  transform: scale(0.8) rotate(0deg);
+  transition: all 0.6s ease;
+  animation: rotateBg 10s linear infinite;
+}
+
+@keyframes rotateBg {
+  0% {
+    transform: scale(0.8) rotate(0deg);
+  }
+  100% {
+    transform: scale(0.8) rotate(360deg);
+  }
+}
+
+/* Dark overlay */
+.skill::after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background: var(--dark-light);
+  z-index: -1;
+  transition: all 0.4s ease;
+}
+
+/* Enhanced hover effect */
+.skill:hover {
+  transform: translateY(-15px) scale(1.03);
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
+  border-color: rgba(255, 255, 255, 0.2);
+}
+
+.skill:hover::before {
+  opacity: 0.8;
+  transform: scale(1) rotate(0deg);
+}
+
+.skill:hover::after {
+  opacity: 0.7;
+}
+
+/* Enhanced icon */
+.skill i {
+  font-size: 3.5rem;
+  margin-bottom: var(--spacing-sm);
+  transition: all 0.5s cubic-bezier(0.68, -0.55, 0.27, 1.55);
+  background: linear-gradient(135deg, var(--primary), var(--accent-alt));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  filter: drop-shadow(0 0 2px rgba(99, 102, 241, 0.3));
+}
+
+.skill:hover i {
+  transform: scale(1.2) rotate(5deg);
+  filter: drop-shadow(0 0 8px rgba(99, 102, 241, 0.6));
+}
+
+/* Enhanced skill title */
+.skill h3 {
+  position: relative;
+  display: inline-block;
+  margin-bottom: var(--spacing-sm);
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.skill:hover h3 {
+  transform: scale(1.05);
+  color: white;
+}
+
+/* Enhanced skill bar */
+.skill-bar {
+  width: 100%;
+  height: 10px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: var(--radius-full);
+  margin-top: 15px;
+  overflow: hidden;
+  position: relative;
+  box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.2);
+}
+
+/* Glowing effect for skill bar */
+.skill-bar::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, 
+    rgba(255, 255, 255, 0) 0%, 
+    rgba(255, 255, 255, 0.1) 50%, 
+    rgba(255, 255, 255, 0) 100%);
+  z-index: 1;
+  animation: skillBarGlow 2s ease-in-out infinite;
+}
+
+@keyframes skillBarGlow {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+/* Enhanced skill progress */
+.skill-progress {
+  height: 100%;
+  background: linear-gradient(90deg, var(--primary), var(--accent-alt));
+  border-radius: var(--radius-full);
+  position: relative;
+  transition: width 1.5s cubic-bezier(0.1, 0.5, 0.1, 1);
+  box-shadow: 0 0 10px rgba(99, 102, 241, 0.5);
+}
+
+/* Animated progress on hover */
+.skill:hover .skill-progress {
+  animation: pulseProgress 1.5s ease-in-out infinite;
+}
+
+@keyframes pulseProgress {
+  0%, 100% {
+    opacity: 1;
+    box-shadow: 0 0 10px rgba(99, 102, 241, 0.5);
+  }
+  50% {
+    opacity: 0.8;
+    box-shadow: 0 0 20px rgba(99, 102, 241, 0.8);
+  }
+}
+
+/* Percentage indicator */
+.skill-progress::after {
+  content: attr(data-percent);
+  position: absolute;
+  right: 0;
+  top: -25px;
+  background: var(--primary);
+  color: white;
+  font-size: 0.75rem;
+  padding: 2px 8px;
+  border-radius: var(--radius-sm);
+  opacity: 0;
+  transform: translateY(10px);
+  transition: all 0.3s ease;
+}
+
+.skill:hover .skill-progress::after {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Responsive adjustments */
+@media (max-width: 992px) {
+  .about-content {
+    flex-direction: column;
+    gap: 3rem;
+  }
+  
+  .about-img, .about-text {
+    max-width: 100%;
+  }
+  
+  .about-img-container {
+    margin: 0 auto;
+    max-width: 80%;
+  }
+  
+  .skill i {
+    font-size: 3rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .about {
+    padding: 4rem 0;
+  }
+  
+  .about-img-container {
+    max-width: 90%;
+  }
+  
+  .about-img::before, 
+  .about-img::after {
+    width: 70px;
+    height: 70px;
+  }
+  
+  .about-text p {
+    font-size: 1rem;
+  }
+  
+  .skill:hover {
+    transform: translateY(-10px) scale(1.02);
+  }
+}
+
+@media (max-width: 576px) {
+  .skill i {
+    font-size: 2.5rem;
+  }
+  
+  .skill-bar {
+    height: 8px;
+  }
+} 

@@ -1,0 +1,309 @@
+/* Animated Borders with Different Color Mixes for Each Section */
+
+/* Base animations */
+@keyframes projectColors {
+  0% {
+    background-position: 0% 50%;
+    filter: hue-rotate(0deg);
+  }
+  50% {
+    background-position: 100% 50%;
+    filter: hue-rotate(90deg);
+  }
+  100% {
+    background-position: 0% 50%;
+    filter: hue-rotate(0deg);
+  }
+}
+
+@keyframes skillColors {
+  0% {
+    background-position: 0% 50%;
+    filter: hue-rotate(120deg);
+  }
+  50% {
+    background-position: 100% 50%;
+    filter: hue-rotate(210deg);
+  }
+  100% {
+    background-position: 0% 50%;
+    filter: hue-rotate(120deg);
+  }
+}
+
+@keyframes contactColors {
+  0% {
+    background-position: 0% 50%;
+    filter: hue-rotate(240deg);
+  }
+  50% {
+    background-position: 100% 50%;
+    filter: hue-rotate(330deg);
+  }
+  100% {
+    background-position: 0% 50%;
+    filter: hue-rotate(240deg);
+  }
+}
+
+/* Shared glassy style for all cards */
+.project-card, .skill, .contact form {
+  position: relative;
+  background: rgba(30, 41, 59, 0.15);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 2px solid rgba(255, 255, 255, 0.05);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+  overflow: hidden;
+}
+
+/* Shared hover effects */
+.project-card:hover, .skill:hover, .contact form:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+  border-color: transparent;
+  background: rgba(30, 41, 59, 0.2);
+}
+
+/* Contact item styling without glassy effect */
+.contact-item {
+  position: relative;
+  border-radius: var(--radius-md);
+  padding: 1.2rem;
+  margin-bottom: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  min-width: 200px;
+  flex: 1;
+  overflow: hidden;
+  background: transparent;
+  border: none;
+  box-shadow: none;
+}
+
+.contact-item:hover {
+  transform: translateY(-5px);
+}
+
+/* PROJECT SECTION - Purple, Blue, Cyan Mix */
+.project-card::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  padding: 2px;
+  background: linear-gradient(
+    120deg,
+    #9c27b0,
+    #673ab7,
+    #3f51b5,
+    #2196f3,
+    #00bcd4,
+    #9c27b0
+  );
+  -webkit-mask: 
+    linear-gradient(#fff 0 0) content-box, 
+    linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  opacity: 0.6;
+  background-size: 300% 300%;
+  animation: projectColors 3s linear infinite;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.project-card:hover::after {
+  opacity: 1;
+  animation: projectColors 1.5s linear infinite;
+}
+
+/* SKILLS SECTION - Green, Teal, Yellow Mix */
+.skill::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  padding: 2px;
+  background: linear-gradient(
+    120deg,
+    #4caf50,
+    #009688,
+    #8bc34a,
+    #cddc39,
+    #ffeb3b,
+    #4caf50
+  );
+  -webkit-mask: 
+    linear-gradient(#fff 0 0) content-box, 
+    linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  opacity: 0.6;
+  background-size: 300% 300%;
+  animation: skillColors 3s linear infinite;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.skill:hover::after {
+  opacity: 1;
+  animation: skillColors 1.5s linear infinite;
+}
+
+/* CONTACT SECTION - Orange, Red, Pink Mix */
+.contact form::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  padding: 2px;
+  background: linear-gradient(
+    120deg,
+    #ff9800,
+    #ff5722,
+    #f44336,
+    #e91e63,
+    #ff4081,
+    #ff9800
+  );
+  -webkit-mask: 
+    linear-gradient(#fff 0 0) content-box, 
+    linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  opacity: 0.6;
+  background-size: 300% 300%;
+  animation: contactColors 3s linear infinite;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.contact form:hover::after {
+  opacity: 1;
+  animation: contactColors 1.5s linear infinite;
+}
+
+/* SKILL SECTION SPECIFIC STYLES */
+.skill {
+  position: relative !important;
+}
+
+/* Remove existing glow */
+.skill-glow {
+  display: none;
+}
+
+/* Make sure skill content is above the border */
+.skill-icon, .skill h3, .skill-description, .skill-bar {
+  position: relative;
+  z-index: 2;
+}
+
+/* CONTACT SECTION SPECIFIC STYLES */
+.contact {
+  text-align: center;
+}
+
+.contact h2 {
+  margin-bottom: 2.5rem;
+}
+
+.contact form {
+  position: relative;
+  max-width: 700px;
+  margin: 0 auto 3rem;
+  text-align: left;
+}
+
+/* Input fields with glassy effect and special border */
+.contact form input,
+.contact form textarea {
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  position: relative;
+  z-index: 2;
+  transition: all 0.3s ease;
+  margin-bottom: 1rem;
+}
+
+/* Add subtle border animation to inputs on focus */
+.contact form input:focus,
+.contact form textarea:focus {
+  border-color: transparent;
+  outline: none;
+  box-shadow: 0 0 0 2px rgba(255, 82, 34, 0.3);
+}
+
+/* Add a subtle glow to form inputs on hover */
+.contact form input:hover,
+.contact form textarea:hover {
+  border-color: rgba(255, 152, 0, 0.3);
+}
+
+/* Contact info items centered on mobile */
+.contact-info {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1.5rem;
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+/* Contact item icons and text */
+.contact-item i, .contact-item p {
+  position: relative;
+  z-index: 2;
+}
+
+/* Contact form responsive styles */
+@media (max-width: 768px) {
+  .contact form {
+    display: flex;
+    flex-direction: column;
+    grid-template-columns: 1fr;
+  }
+  
+  .contact form input,
+  .contact form textarea {
+    width: 100%;
+  }
+  
+  .contact-info {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .contact-item {
+    width: 100%;
+    max-width: 320px;
+  }
+}
+
+/* Enhanced button style */
+.contact form button {
+  margin-top: 1rem;
+  transition: all 0.3s ease;
+}
+
+.contact form button:hover {
+  transform: translateY(-5px);
+}
+
+/* PROJECT SPECIFIC STYLES */
+.project-card {
+  position: relative;
+}
+
+/* Make sure project content is above the border */
+.project-image, .project-content {
+  position: relative;
+  z-index: 2;
+}
+
+/* Ensure visibility of all projects initially */
+.project-card.visible {
+  opacity: 1;
+  transform: translateY(0);
+} 

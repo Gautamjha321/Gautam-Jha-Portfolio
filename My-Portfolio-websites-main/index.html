@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Gautam Jha - Full Stack Developer</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="styles-additional.css">
+    <link rel="stylesheet" href="fixes.css">
+    <link rel="stylesheet" href="responsive.css">
+    <link rel="stylesheet" href="enhanced-sections.css">
+    <link rel="stylesheet" href="mobile-menu.css">
+    <link rel="stylesheet" href="modern-projects.css">
+    <link rel="stylesheet" href="animated-borders.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Add AOS library for scroll animations -->
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <link rel="icon" href="image.jpg" type="image/png">
+
+</head>
+<body>
+
+    <!-- Preloader -->
+    <div class="preloader">
+        <div class="loader">
+            <svg viewBox="0 0 50 50">
+                <circle id="loader-circle" cx="25" cy="25" r="20"></circle>
+            </svg>
+            <div class="loader-text">Loading...</div>
+        </div>
+    </div>
+    
+    <!-- Particle Background -->
+    <canvas id="particle-canvas"></canvas>
+   
+    <!-- Header with Mobile Menu -->
+    <header>
+        <div class="container">
+            <div class="logo">Gautam Jha</div>
+            
+            <!-- Hamburger Menu Button -->
+            <div class="menu-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            
+            <!-- Mobile Menu -->
+            <nav class="mobile-menu">
+                <!-- Navigation Links -->
+                <ul class="nav-links">
+                    <li><a href="#home" class="active">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#skills">Skills</a></li>
+                    <li><a href="#projects">Projects</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+                
+                <!-- Social Media Links -->
+                <div class="mobile-social-links">
+                    <a href="https://github.com/Gautamjha321" target="_blank"><i class="fab fa-github"></i></a>
+                    <a href="https://www.linkedin.com/in/gautam-kumar-jha-77111634b/" target="_blank"><i class="fab fa-linkedin"></i></a>
+                    <a href="https://x.com/GautamJ67900860" target="_blank"><i class="fab fa-twitter"></i></a>
+                    <a href="https://www.instagram.com/smart_engineer_07/" target="_blank"><i class="fab fa-instagram"></i></a>
+                    <a href="jhagautam168@gmail.com"><i class="fas fa-envelope"></i></a>
+                </div>
+            </nav>
+            
+            <!-- Overlay -->
+            <div class="menu-overlay"></div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-text fade-in">
+                    <h1>Hi, I'm <span class="glow" data-text="Gautam Jha">Gautam Jha</span></h1>
+                    <div class="dynamic-text-wrapper">
+                       
+                        <div class="dynamic-text">
+                            <span class="text active">Full Stack Developer</span>
+                            <span class="text">UI/UX Designer</span>
+                            <span class="text">Problem Solver</span>
+                            <span class="text">Creative Thinker</span>
+                        </div>
+                    </div>
+                    <p class="typing-text">Turning Ideas into Reality</p>
+                    <div class="hero-buttons">
+                        <a href="#projects" class="btn">View My Work</a>
+                       
+                        <a href="Gautam_Kumar_Jha.pdf" target="_blank" class="btn btn-outline">Hire Me</a>
+                    </div>
+                    <div class="hero-tags">
+                        <span class="tag">Web Developer</span>
+                        <span class="tag">UI/UX Designer</span>
+                        <span class="tag">Problem Solver</span>
+                    </div>
+                </div>
+                <div class="hero-image fade-in">
+                    <div class="image-container tilt-effect">
+                        <img src="image.jpg" alt="Gautam Jha">
+                        <div class="floating-icon icon-1"><i class="fab fa-react"></i></div>
+                        <div class="floating-icon icon-2"><i class="fab fa-js"></i></div>
+                        <div class="floating-icon icon-3"><i class="fab fa-node"></i></div>
+                        <div class="floating-icon icon-4"><i class="fab fa-html5"></i></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="hero-shape"></div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="container">
+            <h2 data-aos="fade-up">About Me</h2>
+            <div class="about-content">
+                <div class="about-img" data-aos="fade-right" data-aos-delay="200">
+                    <img src="image1.png" alt="Gautam Jha">
+                </div>
+                <div class="about-text" data-aos="fade-left" data-aos-delay="300">
+            
+                      <p>I'm a passionate Frontend Developer with a strong interest in creating modern, responsive, and user-friendly web applications. I enjoy transforming ideas and designs into functional digital experiences using technologies like <strong>HTML</strong>  <strong>CSS</strong>  <strong>JavaScript</strong> and  <Strong>React.</Strong> My goal is to write clean, efficient code and build interfaces that are both visually appealing and accessible across all devices.</p>
+                    <a href="#contact" class="btn">Get In Touch</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    
+
+    <!-- Skills Section -->
+    <section id="skills" class="skills">
+        <div class="container">
+            <h2 data-aos="fade-up">My Skills</h2>
+            <div class="skills-grid">
+                <div class="skill" data-aos="fade-up" data-aos-delay="100">
+                    <div class="skill-icon" data-skill="html">
+                        <i class="fa-brands fa-html5"></i>
+                    </div>
+                    <h3>HTML5</h3>
+                    <p class="skill-description">Semantic markup, accessibility, and modern HTML features</p>
+                    
+                    <div class="skill-glow"></div>
+                </div>
+                
+                <div class="skill" data-aos="fade-up" data-aos-delay="150">
+                    <div class="skill-icon" data-skill="css">
+                        <i class="fa-brands fa-css3-alt"></i>
+                    </div>
+                    <h3>CSS3</h3>
+                    <p class="skill-description">Modern layouts, animations, and responsive design</p>
+                   
+                    <div class="skill-glow"></div>
+                </div>
+
+                <div class="skill" data-aos="fade-up" data-aos-delay="250">
+                    <div class="skill-icon" data-skill="js">
+                        <i class="fa-brands fa-js"></i>
+                    </div>
+                    <h3>JavaScript</h3>
+                    <p class="skill-description">ES6+, DOM manipulation, and async programming</p>
+                   
+                    <div class="skill-glow"></div>
+                </div>
+
+                <div class="skill" data-aos="fade-up" data-aos-delay="300">
+                    <div class="skill-icon" data-skill="react">
+                        <i class="fa-brands fa-react"></i>
+                    </div>
+                    <h3>React</h3>
+                    <p class="skill-description">Component architecture, hooks, and state management</p>
+                   
+                    <div class="skill-glow"></div>
+                </div>
+
+                <!-- <div class="skill" data-aos="fade-up" data-aos-delay="350">
+                    <div class="skill-icon" data-skill="vue">
+                        <i class="fa-brands fa-vuejs"></i>
+                    </div>
+                    <h3>Vue.js</h3>
+                    <p class="skill-description">Progressive JavaScript framework for building user interfaces</p>
+                    <div class="skill-bar">
+                        <div class="skill-progress-bar" style="--progress: 75%"></div>
+                        <div class="skill-percentage">75%</div>
+                    </div>
+                    <div class="skill-glow"></div>
+                </div> -->
+
+                <!-- <div class="skill" data-aos="fade-up" data-aos-delay="400">
+                    <div class="skill-icon" data-skill="node">
+                        <i class="fa-brands fa-node-js"></i>
+                    </div>
+                    <h3>Node.js</h3>
+                    <p class="skill-description">Server-side JavaScript, APIs, and Express.js</p>
+                    <div class="skill-bar">
+                        <div class="skill-progress-bar" style="--progress: 75%"></div>
+                        <div class="skill-percentage">75%</div>
+                    </div>
+                    <div class="skill-glow"></div>
+                </div> -->
+
+                <!-- <div class="skill" data-aos="fade-up" data-aos-delay="450">
+                    <div class="skill-icon" data-skill="python">
+                        <i class="fa-brands fa-python"></i>
+                    </div>
+                    <h3>Python</h3>
+                    <p class="skill-description">Data structures, algorithms, and automation</p>
+                    <div class="skill-bar">
+                        <div class="skill-progress-bar" style="--progress: 80%"></div>
+                        <div class="skill-percentage">80%</div>
+                    </div>
+                    <div class="skill-glow"></div>
+                </div> -->
+
+                <div class="skill" data-aos="fade-up" data-aos-delay="850">
+                    <div class="skill-icon" data-skill="java">
+                        <i class="fa-brands fa-java"></i>
+                    </div>
+                    <h3>Java</h3>
+                    <p class="skill-description">Object-oriented programming and design patterns</p>
+                   
+                    <div class="skill-glow"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="projects">
+        <div class="container">
+            <h2 data-aos="fade-up">My Projects</h2>
+            <div class="projects-grid">
+
+
+                <div class="project-card" data-aos="fade-up" data-aos-delay="400">
+                    <div class="project-image">
+                        <img src="Portfolio.png" alt="Portfolio Website">
+                        <div class="project-tech">
+                            <span>HTML</span>
+                            <span>CSS</span>
+                            <span>JavaScript</span>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <h3>Animated Portfolio Website</h3>
+                        <p>Modern and responsive portfolio website with smooth animations and interactive elements.</p>
+                        <div class="project-links">
+                            <a href="https://my-animated-portfolio-websites.vercel.app/" class="project-btn" target="_blank" >
+                                <i class="fas fa-external-link-alt"></i>
+                                Live Demo
+                            </a>
+                            <a href="https://github.com/Gautamjha321/Animated_Portfolio-Website" class="project-github" target="_blank">
+                                <i class="fab fa-github"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card" data-aos="fade-up" data-aos-delay="100">
+                    <div class="project-image">
+                        <img src="image4.png" alt="Food Delivery Website">
+                        <div class="project-tech">
+                            <span>HTML</span>
+                            <span>CSS</span>
+                            <span>JavaScript</span>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <h3>Lazarev Website  Clone</h3>
+                        <p>A responsive, pixel-perfect clone of the Lazarev.agency website built with HTML, CSS, and JavaScript. It replicates the sleek animations and interactive UI/UX of the original award-winning design.</p>
+                        <div class="project-links">
+                            <a href="https://lazarev-website-clone-six.vercel.app/" class="project-btn" target="_blank" >
+                                <i class="fas fa-external-link-alt"></i>
+                                Live Demo
+                            </a>
+                            <a href="https://github.com/Gautamjha321/LAZAREV-WEBSITE-CLONE" class="project-github" target="_blank">
+                                <i class="fab fa-github"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="project-card" data-aos="fade-up" data-aos-delay="200">
+                    <div class="project-image">
+                        <img src="image5.png" alt="E-commerce Platform">
+                        <div class="project-tech">
+                           <span>HTML</span>
+                            <span>CSS</span>
+                            <span>JavaScript</span>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <h3>MakePill-Website-UI</h3>
+                        <p>A fully responsive and animated clone of the official MAKEPILL website, built with HTML, CSS, and JavaScript. It replicates the original site's unique design, layout, and interactive user experience.</p>
+                        <div class="project-links">
+                            <a href="https://make-pill-website-ui.vercel.app/" class="project-btn" target="_blank">
+                                <i class="fas fa-external-link-alt"></i>
+                                Live Demo
+                            </a>
+                            <a href="https://github.com/Gautamjha321/MakePill-Website-UI" class="project-github" target="_blank"> 
+                                <i class="fab fa-github"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="project-card" data-aos="fade-up" data-aos-delay="300">
+                    <div class="project-image">
+                        <img src="image3.png" alt="AI-Powered Chess Engine">
+                        <div class="project-tech">
+                             <span>HTML</span>
+                            <span>CSS</span>
+                            <span>JavaScript</span>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <h3>Modern-Golf-Websites</h3>
+                        <p>A fully responsive and visually stunning golf club website built with HTML, CSS, and JavaScript. Showcases a premium golf club with sleek design, smooth animations, and a mobile-friendly layout.</p>
+                        <div class="project-links">
+                            <a href="https://modern-golf-website.vercel.app/" class="project-btn" target="_blank">
+                                <i class="fas fa-external-link-alt"></i>
+                                Live Demo
+                            </a>
+                            <a href="https://github.com/Gautamjha321/Modern-Golf-Website" class="project-github" target="_blank">
+                                <i class="fab fa-github"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="project-card" data-aos="fade-up" data-aos-delay="300">
+                    <div class="project-image">
+                        <img src="image.png" alt="AI-Powered Chess Engine">
+                        <div class="project-tech">
+                             <span>HTML</span>
+                            <span>CSS</span>
+                            <span>JavaScript</span>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <h3>AI-Chatbot</h3>
+                        <p>A sleek and modern AI ChatBot UI built with HTML, CSS, and JavaScript. It simulates real-time messaging with auto-responses, ideal for showcasing UI/UX design and dynamic DOM manipulation skills.</p>
+                        <div class="project-links">
+                            <a href="https://ai-chat-bot-4qte.vercel.app/" class="project-btn " target="_blank">
+                                <i class="fas fa-external-link-alt"></i>
+                                Live Demo
+                            </a>
+                            <a href="https://github.com/Gautamjha321/Ai-ChatBot" class="project-github" target="_blank"> 
+                                <i class="fab fa-github"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <h2 data-aos="fade-up">Contact Me</h2>
+            <form  action="https://formsubmit.co/jhagautam168@gmail.com" method="POST" id="contact-form" data-aos="fade-up" data-aos-delay="200"target="_blank"> 
+                <input type="text" name="name" placeholder="Your Name" required>
+                <input type="email" name="email" placeholder="Your Email" required>
+                <textarea name="message" placeholder="Your Message" required></textarea>
+                <button type="submit" class="btn">
+                    <span>Send Message</span>
+                    <i class="fas fa-paper-plane"></i>
+                </button>
+            </form>
+            <div class="contact-info" data-aos="fade-up" data-aos-delay="300">
+                <div class="contact-item">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <p>Bhubneshwar , odisha, india</p>
+                </div>
+                <div class="contact-item">
+                    <i class="fas fa-envelope"></i>
+                    <p>jhagautam168@gmail.com</p>
+                </div>
+                <div class="contact-item">
+                    <i class="fas fa-phone"></i>
+                    <p>+91 7050734695</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="social-links">
+                <a href="https://github.com/Gautamjha321" target="_blank" class="glow"><i class="fab fa-github"></i></a>
+                <a href="https://www.linkedin.com/in/gautam-kumar-jha-77111634b/" target="_blank" class="glow"><i class="fab fa-linkedin"></i></a>
+                <a href="https://x.com/GautamJ67900860" target="_blank" class="glow"><i class="fab fa-twitter"></i></a>
+                <a href="https://myaccount.google.com/?hl=en&utm_source=OGB&utm_medium=act&gar=WzEyMF0" class="glow"><i class="fas fa-envelope"></i></a>
+            </div>
+            <p>&copy; 2024 Gautam Jha. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- AOS Library for scroll animations -->
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+        AOS.init({
+            duration: 800,
+            offset: 100,
+            once: true
+        });
+    </script>
+    <!-- Mobile Menu JavaScript -->
+    <script src="mobile-menu.js"></script>
+    <!-- Main JavaScript -->
+    <script src="script.js"></script>
+
+    <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
+<script>
+  (function() {
+    emailjs.init("xf_V6LlEi5UdmvaM9"); // Replace with your EmailJS public key
+  })();
+</script>
+
+
+</body>
+</html>

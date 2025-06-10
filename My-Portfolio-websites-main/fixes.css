@@ -1,0 +1,266 @@
+/* Fixes for portfolio website issues */
+
+/* Fix for dynamic text animation */
+.dynamic-text-wrapper {
+  display: flex;
+  align-items: center;
+  height: 60px;
+  margin-bottom: 1.5rem;
+  font-size: 1.5rem;
+  overflow: hidden;
+}
+
+.dynamic-text {
+  position: relative;
+  height: 60px;
+  overflow: hidden;
+  margin-left: 8px;
+  min-width: 250px; /* Add minimum width to prevent layout shifts */
+}
+
+.dynamic-text .text {
+  position: absolute;
+  color: #4361ee; /* Use a specific color instead of var */
+  font-weight: 600;
+  transform: translateY(60px); /* Start from below */
+  opacity: 0;
+  transition: all 0.5s cubic-bezier(0.68, -0.55, 0.27, 1.55);
+  white-space: nowrap;
+  left: 0; /* Ensure all text starts from the same position */
+}
+
+.dynamic-text .text.active {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+/* Fix for hero image spacing */
+.hero-content {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+}
+
+.hero-text {
+  flex: 1;
+  min-width: 300px;
+  max-width: 600px; /* Limit width for better spacing */
+}
+
+.hero-image {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-width: 300px;
+  max-width: 500px; /* Limit width for better spacing */
+  margin: 0 auto; /* Center the image */
+}
+
+/* Fix for hero tags spacing */
+.hero-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-top: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.tag {
+  padding: 0.5rem 1rem;
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 50px;
+  font-size: 0.8rem;
+  backdrop-filter: blur(10px);
+  transition: all 0.3s ease;
+}
+
+.tag:hover {
+  background: rgba(255, 255, 255, 0.2);
+  transform: translateY(-3px);
+}
+
+/* Fix for smooth scrolling */
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 80px; /* Add padding for fixed header */
+}
+
+/* Fix for image container */
+.image-container {
+  position: relative;
+  width: 350px;
+  height: 350px;
+  opacity: 1; /* Make sure it's visible */
+  transition: transform 0.3s ease-out;
+  perspective: 1000px;
+  margin: 0 auto; /* Center the container */
+}
+
+/* Add fade-in animation */
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.fade-in {
+  animation: fade-in 1s ease forwards;
+}
+
+/* Fix for floating icons */
+.floating-icon {
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(5px);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  color: white;
+  box-shadow: 0 0 20px rgba(113, 33, 255, 0.6);
+  z-index: 2;
+  transition: all 0.3s ease;
+  animation: float-icon 5s ease-in-out infinite;
+  opacity: 1; /* Make sure they're visible */
+}
+
+/* Adjust icon positions */
+.icon-1 {
+  top: 10%;
+  right: -10%;
+  animation-delay: 0s;
+}
+
+.icon-2 {
+  top: 70%;
+  left: -10%;
+  animation-delay: 1s;
+}
+
+.icon-3 {
+  top: 20%;
+  right: -10%;
+  animation-delay: 2s;
+}
+
+.icon-4 {
+  top: 60%;
+  right: 10%;
+  animation-delay: 3s;
+}
+
+/* Additional responsive fixes */
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Fix for mobile menu toggle */
+.menu-toggle {
+  display: none;
+}
+
+@media (max-width: 992px) {
+  .menu-toggle {
+    display: flex;
+  }
+}
+
+/* Fix for body when menu is open */
+body.menu-open {
+  overflow: hidden;
+}
+
+/* Fix for nav on larger screens */
+@media (min-width: 993px) {
+  nav {
+    position: static !important;
+    width: auto !important;
+    height: auto !important;
+    background: transparent !important;
+    box-shadow: none !important;
+    padding-top: 0 !important;
+  }
+  
+  .mobile-social-links {
+    display: none !important;
+  }
+}
+
+/* Fix for projects grid */
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 2rem;
+}
+
+/* Fix for contact form */
+.contact form {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.contact form textarea {
+  grid-column: span 2;
+}
+
+.contact form button {
+  grid-column: span 2;
+  justify-self: center;
+  min-width: 200px;
+}
+
+/* Fix for section padding */
+section {
+  padding: 5rem 0;
+}
+
+@media (max-width: 768px) {
+  section {
+    padding: 3rem 0;
+  }
+}
+
+@media (max-width: 576px) {
+  section {
+    padding: 2rem 0;
+  }
+}
+
+/* Fix for menu transition */
+.menu-toggle span {
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+/* Custom scrollbar for mobile menu */
+nav::-webkit-scrollbar {
+  width: 4px;
+}
+
+nav::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+nav::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.3);
+  border-radius: 4px;
+}
+
+nav::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.5);
+} 

@@ -1,0 +1,365 @@
+/* Modern Projects Section with Glassy Cards */
+
+/* ===== PROJECTS SECTION LAYOUT ===== */
+.projects {
+  position: relative;
+  padding: 6rem 0;
+  
+  overflow: hidden;
+}
+
+/* Background decorative elements */
+.projects::before {
+  content: '';
+  position: absolute;
+  top: -100px;
+  right: -100px;
+  width: 400px;
+  height: 400px;
+ 
+  z-index: 0;
+  border-radius: 50%;
+}
+
+.projects::after {
+  content: '';
+  position: absolute;
+  bottom: -100px;
+  left: -100px;
+  width: 400px;
+  height: 400px;
+  
+  z-index: 0;
+  border-radius: 50%;
+}
+
+.projects h2 {
+  position: relative;
+  z-index: 1;
+  margin-bottom: 3rem;
+  text-align: center;
+}
+
+.projects h2::after {
+  content: '';
+  position: absolute;
+  bottom: -15px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60px;
+  height: 4px;
+  background: linear-gradient(90deg, var(--primary), var(--accent-alt));
+  border-radius: var(--radius-full);
+  transition: width 0.4s ease;
+}
+
+.projects h2:hover::after {
+  width: 120px;
+}
+
+/* ===== PROJECTS GRID LAYOUT ===== */
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+  gap: 2.5rem;
+  position: relative;
+  z-index: 1;
+}
+
+/* ===== PROJECT CARD DESIGN ===== */
+.project-card {
+  position: relative;
+  border-radius: 16px;
+  overflow: hidden;
+  /* Background and border styles are now in animated-borders.css */
+  height: 100%;
+  transform: translateY(0);
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.project-card.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Remove previously defined border animations since they're now in animated-borders.css */
+.project-card::before {
+  display: none;
+}
+
+/* Remove or disable previous after pseudo-element */
+.project-card::after {
+  /* This will be overridden by the shared style in animated-borders.css */
+}
+
+/* Card hover effects are now in animated-borders.css */
+
+/* Project image container */
+.project-image {
+  position: relative;
+  overflow: hidden;
+  height: 200px;
+  z-index: 2;
+}
+
+.project-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.7s ease;
+  z-index: 2;
+}
+
+.project-card:hover .project-image img {
+  transform: scale(1.1);
+}
+
+/* Tech stack overlay */
+.project-tech {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to bottom, transparent, rgba(15, 23, 42, 0.8));
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  padding: 1rem;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 0.4s ease;
+  z-index: 3;
+}
+
+.project-card:hover .project-tech {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.project-tech span {
+  display: inline-block;
+  padding: 0.3rem 0.8rem;
+  margin: 0.25rem;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  border-radius: 20px;
+  font-size: 0.75rem;
+  font-weight: 500;
+  color: var(--light);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.project-tech span:hover {
+  background: var(--primary);
+  transform: translateY(-3px);
+}
+
+/* Add shimmer effect to tech tags */
+.project-tech span::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.2),
+    transparent
+  );
+  transition: left 0.7s ease;
+}
+
+.project-tech span:hover::after {
+  left: 100%;
+}
+
+/* Project content */
+.project-content {
+  padding: 1.5rem;
+}
+
+.project-card h3 {
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin-bottom: 0.75rem;
+  color: var(--light);
+  transition: color 0.3s ease;
+}
+
+.project-card:hover h3 {
+  color: var(--primary);
+}
+
+.project-card p {
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: rgba(255, 255, 255, 0.7);
+  margin-bottom: 1.5rem;
+}
+
+/* Project links */
+.project-links {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  margin-top: auto;
+}
+
+.project-btn {
+  padding: 0.6rem 1.2rem;
+  background: rgba(99, 102, 241, 0.1);
+  border: 1px solid rgba(99, 102, 241, 0.3);
+  border-radius: 8px;
+  color: var(--light);
+  font-size: 0.9rem;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+.project-btn::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.2),
+    transparent
+  );
+  transition: left 0.7s ease;
+}
+
+.project-btn:hover {
+  background: var(--primary);
+  border-color: var(--primary);
+  transform: translateY(-3px);
+  box-shadow: 0 5px 15px rgba(99, 102, 241, 0.4);
+}
+
+.project-btn:hover::before {
+  left: 100%;
+}
+
+.project-github {
+  width: 38px;
+  height: 38px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 50%;
+  color: var(--light);
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.project-github::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(45deg, var(--primary), var(--accent-alt));
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.project-github i {
+  position: relative;
+  z-index: 1;
+  transition: all 0.3s ease;
+}
+
+.project-github:hover {
+  transform: translateY(-3px) rotate(5deg);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.project-github:hover::before {
+  opacity: 1;
+}
+
+.project-github:hover i {
+  transform: scale(1.2);
+}
+
+/* Responsive Design */
+@media (max-width: 1200px) {
+  .projects-grid {
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  }
+}
+
+@media (max-width: 768px) {
+  .projects-grid {
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 2rem;
+  }
+  
+  .project-image {
+    height: 180px;
+  }
+}
+
+@media (max-width: 576px) {
+  .projects-grid {
+    grid-template-columns: 1fr;
+    max-width: 400px;
+    margin: 0 auto;
+  }
+  
+  .project-card h3 {
+    font-size: 1.2rem;
+  }
+  
+  .project-card p {
+    font-size: 0.9rem;
+  }
+}
+
+/* Staggered animation for cards */
+.project-card:nth-child(1) {
+  transition-delay: 0.1s;
+}
+
+.project-card:nth-child(2) {
+  transition-delay: 0.2s;
+}
+
+.project-card:nth-child(3) {
+  transition-delay: 0.3s;
+}
+
+.project-card:nth-child(4) {
+  transition-delay: 0.4s;
+}
+
+/* Card glow effect */
+.card-glow {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 0;
+  opacity: 0.8;
+  border-radius: 16px;
+} 
