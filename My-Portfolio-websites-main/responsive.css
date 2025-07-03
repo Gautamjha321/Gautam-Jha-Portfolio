@@ -53,7 +53,9 @@
   header .container {
     padding: 0 var(--mobile-padding);
   }
-  
+  .rol{
+    
+  }
   .menu-toggle {
     display: flex;
     flex-direction: column;
