@@ -34,7 +34,7 @@ A sleek, modern **personal portfolio website** built with **HTML, CSS, and JavaS
 
 | Home / Hero Section | Projects Section | Contact Section |
 |----------------------|------------------|------------------|
-| ![Home](image0.png) | ![Projects](Project.png) | ![Contact](Contact.png) |
+| ![Home](image/image0.png) | ![Projects](image/Project.png) | ![Contact](image/Contact.png) |
 
 *(Replace with your actual screenshots)*
 
